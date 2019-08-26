@@ -4,8 +4,10 @@ import { Redirect } from "react-router-dom";
 class Registration extends Component {
   state = {
     username: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    rehashedPassword: ""
+    password: ""
   };
 
   onChange = event => {
@@ -45,6 +47,24 @@ class Registration extends Component {
             onChange={this.onChange}
           />
         </div>
+        <div className='form-group'>
+          <label htmlFor=''>First Name</label>
+          <input
+              type='text'
+              name='firstName'
+              className='form-control'
+              onChange={this.onChange}
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor=''>Last Name</label>
+          <input
+              type='text'
+              name='lastName'
+              className='form-control'
+              onChange={this.onChange}
+          />
+        </div>
         <div>
           <label htmlFor=''>Email</label>
           <input
@@ -58,7 +78,7 @@ class Registration extends Component {
           <label htmlFor=''>Password</label>
           <input
             type='password'
-            name='rehashedPassword'
+            name='password'
             className='form-control'
             onChange={this.onChange}
           />

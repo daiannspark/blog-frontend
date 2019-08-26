@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import {Redirect} from "react-router-dom";
 
 class Login extends Component {
   state = {
     email: "",
-    hashedPassword: ""
+    password: ""
   };
 
   onChange = event => {
@@ -26,6 +26,7 @@ class Login extends Component {
   render() {
     const { user } = this.props;
 
+    console.log(this.prop, user);
     if (user.token) {
       return <Redirect to='/' />;
     }
@@ -48,7 +49,7 @@ class Login extends Component {
           <label htmlFor=''>Password</label>
           <input
             type='password'
-            name='hashedPassword'
+            name='password'
             className='form-control'
             onChange={this.onChange}
           />

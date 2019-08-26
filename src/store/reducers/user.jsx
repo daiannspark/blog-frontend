@@ -1,7 +1,7 @@
 const user = (state = {}, action) => {
   switch (action.type) {
     case "LOGIN_SUCCESS":
-      return action.payload;
+      return { token: action.payload };
     case "GET_USER_INFO":
       return { ...state, userInfo: action.payload };
     case "LOGOUT":

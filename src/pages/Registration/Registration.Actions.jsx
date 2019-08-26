@@ -3,7 +3,7 @@ import { success, error } from "react-notification-system-redux";
 
 const registerUser = user => dispatch => {
   axios
-    .post("/api/v1/auth/users", user)
+    .post("/api/v1/auth/register", user)
     .then(response => {
       if (response && response.status === 200) {
         dispatch({
@@ -14,7 +14,6 @@ const registerUser = user => dispatch => {
         dispatch(
           success({
             title: "Registration success",
-            message: "Check your email for login link",
             position: "tr",
             autoDismiss: 5
           })

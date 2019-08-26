@@ -16,13 +16,13 @@ const Navigation = () => {
           </Link>
         </li>
         <li className='nav-item'>
-          <Link to='/users/self' className='nav-link'>
-            My profile
+          <Link to='/login' className='nav-link'>
+            Login
           </Link>
         </li>
           <li className='nav-item'>
-            <Link to='/addPost' className='nav-link'>
-              Add Post
+            <Link to='/profile' className='nav-link'>
+              Profile
             </Link>
           </li>
       </ul>
