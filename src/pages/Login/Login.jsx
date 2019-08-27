@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -26,7 +26,6 @@ class Login extends Component {
   render() {
     const { user } = this.props;
 
-    console.log(this.prop, user);
     if (user.token) {
       return <Redirect to='/' />;
     }
