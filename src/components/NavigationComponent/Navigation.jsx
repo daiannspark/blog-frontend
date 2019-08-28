@@ -29,18 +29,27 @@ const Navigation = ({ user, logout }) => {
             Category
           </Link>
         </li>
-        {/*  <li className='nav-item'>*/}
-        {/*    <Link to='/user/profile' className='nav-link'>*/}
-        {/*      Profile*/}
-        {/*    </Link>*/}
-        {/*  </li>*/}
-        {/*{user.token ? (*/}
-        {/*    <li className='nav-item'>*/}
-        {/*      <Link to='/addPost' className='nav-link'>*/}
-        {/*        Add Post*/}
-        {/*      </Link>*/}
-        {/*    </li>*/}
-        {/*) : null}*/}
+        {user.token ? (
+          <li className='nav-item'>
+            <Link to='/profile' className='nav-link'>
+              Profile
+            </Link>
+          </li>
+          ) : null}
+        {user.token ? (
+            <li className='nav-item'>
+              <Link to='/addPost' className='nav-link'>
+                Add Post
+              </Link>
+            </li>
+        ) : null}
+        {user.token ? (
+            <li className='nav-item'>
+              <Link to='/comment' className='nav-link'>
+                Comments
+              </Link>
+            </li>
+        ) : null}
       </ul>
       {user.token ? (
           <button onClick={logout} className='btn btn-warning'>

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getPost = ({ token }, postId) => dispatch => {
   axios
-    .get(`/api/v1/media/${postId}/`, {
+    .get(`/api/v1/post/${postId}/`, {
       headers: {
         authorization: `Bearer ${token}`
       }
