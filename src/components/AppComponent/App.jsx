@@ -10,7 +10,8 @@ import Registration from "../../pages/Registration";
 import Posts from "../../pages/Posts";
 import Login from "../../pages/Login";
 import PrivateRoute from "../PrivateRoute";
-import AddPost from "../../pages/AddPost/";
+import AddPost from "../../pages/AddPost";
+import Post from "../../pages/Post";
 
 const App = ({ user, logout }) => {
     return (
@@ -22,9 +23,11 @@ const App = ({ user, logout }) => {
                     <Route path='/register' component={Registration} />
 
                     <PrivateRoute path='/category' component={CategoryComponent} />
-                    <PrivateRoute path='/addPost' component={AddPost} />
+
                     <PrivateRoute path='/user/profile' component={User} />
                     <PrivateRoute path='/' component={Posts} exact />
+                    <PrivateRoute path='/addPost' component={AddPost} />
+                    <PrivateRoute path='/post/:postId' component={Post} />
                 </Switch>
             </Router>
             <NotificationSystem />

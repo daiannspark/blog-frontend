@@ -3,6 +3,8 @@ import Post from "./Post";
 import { getPost } from "./Post.Action";
 
 const stateToProps = state => {
+
+  console.log('stateToProps', state);
   return {
     user: state.user,
     post: state.getPost

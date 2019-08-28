@@ -9,7 +9,7 @@ const getPost = ({ token }, postId) => dispatch => {
     })
     .then(response => {
       if (response && response.status === 200) {
-        const { payload } = response.data;
+        const payload = response.data;
         dispatch({
           type: "GET_POST",
           payload
