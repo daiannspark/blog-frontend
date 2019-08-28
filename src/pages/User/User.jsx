@@ -5,14 +5,13 @@ class User extends Component {
     this.props.getSelfInfo(this.props.user);
   }
   render() {
-    const { userInfo } = this.props.user;
+    const { token } = this.props.user;
 
     return (
       <table>
         <tbody>
           <tr>
-            <td>{userInfo.id}</td>
-            <td>{userInfo.email}</td>
+            <td>Token: {token}</td>
           </tr>
         </tbody>
       </table>

@@ -3,7 +3,6 @@ import Comments from "../../components/Comments";
 
 class Post extends Component {
   componentDidMount() {
-    console.log('componentDidMount', this.props);
     this.props.getPost(this.props.user, this.props.match.params.postId);
   }
 

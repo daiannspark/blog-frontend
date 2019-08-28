@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import CategoriesList from "../../components/CategoryComponent";
 
 class Posts extends Component {
   componentDidMount() {
@@ -10,6 +11,10 @@ class Posts extends Component {
     const { posts } = this.props;
     return (
       <div className='d-flex justify-content-center align-items-center'>
+        <div>
+          <h3>Categories</h3>
+          <CategoriesList/>
+        </div>
         <ul className='list-unstyled'>
           {posts.map(item => (
             <li key={item._id}>

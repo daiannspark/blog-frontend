@@ -10,13 +10,6 @@ const Navigation = ({ user, logout }) => {
             Home
           </Link>
         </li>
-        {/*{ user ? null :*/}
-        {/*  <li className='nav-item'>*/}
-        {/*    <Link to='/login' className='nav-link'>*/}
-        {/*      Login*/}
-        {/*    </Link>*/}
-        {/*  </li>*/}
-        {/*}*/}
         { user.token ? null :
             <li className='nav-item'>
               <Link to='/register' className='nav-link'>
@@ -24,11 +17,6 @@ const Navigation = ({ user, logout }) => {
               </Link>
             </li>
         }
-        <li className='nav-item'>
-          <Link to='/category' className='nav-link'>
-            Category
-          </Link>
-        </li>
         {user.token ? (
           <li className='nav-item'>
             <Link to='/profile' className='nav-link'>

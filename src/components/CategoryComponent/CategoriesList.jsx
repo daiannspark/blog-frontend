@@ -1,24 +1,41 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class Categories extends Component {
-    componentDidMount() {
-        this.props.getCategories(this.props.user);
+    constructor(props) {
+        super(props);
+        this.state = {categoryId: "all"};
     }
 
+    componentDidMount = () => {
+        this.props.getCategories();
+    };
+
+    submit = () => {
+        const { categoryId } = this.state;
+
+        let query = {};
+        if(categoryId !== "all"){
+            query = { categoryId }
+        }
+
+        this.props.getPostsList({ token: this.props.user.token, query})
+    };
+
+    change = (event) => {
+        this.setState( {categoryId: event.target.value});
+    };
+
     render() {
-        const { category } = this.props;
+        const { categories } = this.props;
         return (
             <div className='d-flex justify-content-center align-items-center'>
-                <ul className='list-unstyled'>
-                    {category.map(item => (
-                        <li key={item._id}>
-                            <Link to={`/category/${item._id}`}>
-                                <div className='title'>{item.title}</div>
-                            </Link>
-                        </li>
+                <select onChange={this.change} value={this.state.categoryId}>
+                    <option value="all">All categories</option>
+                    {categories.map(item => (
+                        <option value={item._id} key={item.title}>{item.title}</option>
                     ))}
-                </ul>
+                </select>
+                <button onClick={this.submit}>Refresh</button>
             </div>
         );
     }

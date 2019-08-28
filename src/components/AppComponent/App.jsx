@@ -21,10 +21,7 @@ const App = ({ user, logout }) => {
                 <Switch>
                     <Route path='/login' component={Login} />
                     <Route path='/register' component={Registration} />
-
-                    <PrivateRoute path='/category' component={CategoryComponent} />
-
-                    <PrivateRoute path='/user/profile' component={User} />
+                    <PrivateRoute path='/profile' component={User} />
                     <PrivateRoute path='/' component={Posts} exact />
                     <PrivateRoute path='/addPost' component={AddPost} />
                     <PrivateRoute path='/post/:postId' component={Post} />
