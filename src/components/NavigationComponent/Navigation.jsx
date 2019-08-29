@@ -40,8 +40,8 @@ const Navigation = ({ user, logout }) => {
         ) : null}
       </ul>
       {user.token ? (
-          <button onClick={logout} className='btn btn-warning'>
-            Log OUT!!!!
+          <button onClick={logout} className='btn btn-info'>
+            Logout
           </button>
       ) : null}
     </nav>

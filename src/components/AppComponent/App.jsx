@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NotificationSystem from "../NotificationComponent";
 import User from "../../pages/User";
 import Navigation from "../NavigationComponent";
-import CategoryComponent from "../CategoryComponent"
 import Registration from "../../pages/Registration";
 import Posts from "../../pages/Posts";
 import Login from "../../pages/Login";

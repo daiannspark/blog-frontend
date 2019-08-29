@@ -1,15 +1,16 @@
 import { connect } from "react-redux";
 import Comments from "./Comments";
-import { getCommentsByContentId, addComment } from "./Comments.Action";
+import { getComments, addComment } from "./Comments.Action";
 
 const stateToProps = state => {
   return {
     user: state.user,
-    comments: state.comments
+    comments: state.comments,
+    message: state.message
   };
 };
 
 export default connect(
   stateToProps,
-  { getCommentsByContentId, addComment }
+  { getComments, addComment }
 )(Comments);

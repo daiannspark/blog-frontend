@@ -14,6 +14,9 @@ class Post extends Component {
           <h3>{this.props.post.message}</h3>
           <img src={this.props.post.image} alt='' className='w-25' />
         </div>
+        <div>
+          <Comments postId={this.props.match.params.postId} />
+        </div>
       </Fragment>
     );
   }
