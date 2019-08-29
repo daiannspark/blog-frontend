@@ -11,6 +11,10 @@ class AddPost extends Component {
 
   fileInput = React.createRef();
 
+  componentDidMount = () => {
+    this.props.getCategories();
+  };
+
   onChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -28,7 +32,8 @@ class AddPost extends Component {
   };
 
   render() {
-    const { addedPost } = this.props;
+    const { addedPost, categories } = this.props;
+
     if (addedPost._id) {
       return <Redirect to={`/post/${addedPost._id}`} />;
     }
@@ -55,13 +60,13 @@ class AddPost extends Component {
           />
         </div>
         <div className='form-group'>
-          <label htmlFor=''>Category</label>
-          <input
-              name='categoryId'
-              type='text'
-              className='form-control'
-              onChange={this.onChange}
-          />
+          <label htmlFor=''>Category</label><br />
+          <select name='categoryId' onChange={this.onChange}>
+            <option value="all">All categories</option>
+            {categories.map(item => (
+                <option value={item._id} key={item.title}>{item.title}</option>
+            ))}
+          </select>
         </div>
         <div className='form-group'>
           <label htmlFor=''>Image</label>

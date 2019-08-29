@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import AddComment from "./AddComment";
-import {Redirect} from "react-router-dom";
 
 class Comments extends Component {
   componentDidMount() {
-    this.props.getComments(this.props.user, { postId: this.props.postId });
+    this.props.getComments({postId: this.props.postId });
   }
 
   onChange = event => {
@@ -14,10 +13,6 @@ class Comments extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    if (this.state.message.length < 5) {
-      console.log("Min length 5 char");
-      return;
-    }
 
     this.props.addComment(this.props.user, this.props.postId, this.state.message);
   };
