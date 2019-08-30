@@ -28,7 +28,7 @@ class Categories extends Component {
     render() {
         const { categories } = this.props;
         return (
-            <div className='d-flex justify-content-center align-items-center'>
+            <div className='d-flex justify-content-center align-items-center '>
                 <select onChange={this.change} value={this.state.categoryId}>
                     <option value="all">All categories</option>
                     {categories.map(item => (

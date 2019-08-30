@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 const Navigation = ({ user, logout }) => {
   return (
-    <nav className='navbar navbar-expand-lg navbar-dark bg-secondary'>
+    <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div className='navigationBar col-6 ml-auto mr-auto'>
       <ul className='navbar-nav mr-auto'>
         <li className='nav-item'>
           <Link to='/' className='nav-link'>
@@ -17,6 +18,13 @@ const Navigation = ({ user, logout }) => {
               </Link>
             </li>
         }
+          {user.token ? (
+              <li className='nav-item'>
+                  <Link to='/addPost' className='nav-link'>
+                      Add Post
+                  </Link>
+              </li>
+          ) : null}
         {user.token ? (
           <li className='nav-item'>
             <Link to='/profile' className='nav-link'>
@@ -24,21 +32,8 @@ const Navigation = ({ user, logout }) => {
             </Link>
           </li>
           ) : null}
-        {user.token ? (
-            <li className='nav-item'>
-              <Link to='/addPost' className='nav-link'>
-                Add Post
-              </Link>
-            </li>
-        ) : null}
-        {user.token ? (
-            <li className='nav-item'>
-              <Link to='/comment' className='nav-link'>
-                Comments
-              </Link>
-            </li>
-        ) : null}
       </ul>
+      </div>
       {user.token ? (
           <button onClick={logout} className='btn btn-info'>
             Logout

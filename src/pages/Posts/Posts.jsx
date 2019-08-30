@@ -10,7 +10,7 @@ class Posts extends Component {
   render() {
     const { posts } = this.props;
     return (
-      <div className='d-flex justify-content-center align-items-center'>
+      <div className='d-flex justify-content-center align-items-center col-6 ml-auto mr-auto'>
         <div>
           <h3>Categories</h3>
           <CategoriesList/>

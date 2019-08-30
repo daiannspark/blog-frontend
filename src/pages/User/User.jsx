@@ -8,16 +8,24 @@ class User extends Component {
     if(this.props.user.userInfo) {
       const { username, firstName, lastName, email } = this.props.user.userInfo;
       return (
+          <div className='profile col-6 ml-auto mr-auto'>
           <table>
             <tbody>
             <tr>
-              <td>Username: {username}</td>
-              <td>firstName: {firstName}</td>
-              <td>lastName: {lastName}</td>
-              <td>email: {email}</td>
+                <td>Username: {username}</td>
+            </tr>
+            <tr>
+                <td>firstName: {firstName}</td>
+            </tr>
+            <tr>
+                <td>lastName: {lastName}</td>
+            </tr>
+            <tr>
+                <td>email: {email}</td>
             </tr>
             </tbody>
           </table>
+        </div>
       );
     } else {
       return null;
